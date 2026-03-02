@@ -77,8 +77,8 @@ async function downloadResult(token, server, task) {
  */
 async function convertFile(fileBuffer, fileName, inputFormat, outputFormat) {
   let tool;
-  if (inputFormat === 'pdf' && outputFormat === 'docx') tool = 'pdftodocx';
-  else if (inputFormat === 'pdf' && (outputFormat === 'jpg' || outputFormat === 'png')) tool = 'pdftoimages';
+  if (inputFormat === 'pdf' && outputFormat === 'docx') tool = 'pdfword'; // Note: Might require premium
+  else if (inputFormat === 'pdf' && (outputFormat === 'jpg' || outputFormat === 'png')) tool = 'pdfjpg';
   else if ((inputFormat === 'docx' || inputFormat === 'doc') && outputFormat === 'pdf') tool = 'officepdf';
   else if ((inputFormat === 'jpg' || inputFormat === 'png' || inputFormat === 'webp') && outputFormat === 'pdf') tool = 'imagepdf';
   else throw new Error(`iLovePDF does not support ${inputFormat} → ${outputFormat}`);
